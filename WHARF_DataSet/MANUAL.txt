@@ -62,7 +62,7 @@ the adopted rationale for their definition, can be found at:
 
 2.1. Files tree
 ---------------
-- Data
+- WHARF_DataSet
    - Brush_teeth (12 elements)
    - Climb_stairs (112 elements)
    - Comb_hair (31 elements)
@@ -93,7 +93,6 @@ the adopted rationale for their definition, can be found at:
    - displayModel.m
    - displayTrial.m
 - MANUAL.TXT
-- README.TXT
 
 2.2. Folder types
 -----------------
