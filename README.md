@@ -63,6 +63,10 @@ To validate the models:
 2. run `ValidateWHARF`
 3. check the results in the RESULTS folder
 
+### Usage with the Bimanual Data Set
+
+...under construction...
+
 ### Info for developers
 
 ...under construction...
@@ -91,3 +95,5 @@ Barbara Bruno - barbara.bruno@unige.it
 Fulvio Mastrogiovanni - fulvio.mastrogiovanni@unige.it
 
 Barbara Bruno and Fulvio Mastrogiovanni are with the dept. DIBRIS at the University of Genoa, Italy.
+
+The Bimanual Data Set has been collected by Divya Shah, Ernesto Denicia and Tiago Pimentel in partial fulfillment of the requirements for the course Software Architectures for Robotics, offered at the University of Genoa within the European Master on Advanced Robotics (EMARO+) master programme.
