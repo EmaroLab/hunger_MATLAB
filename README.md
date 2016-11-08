@@ -14,41 +14,9 @@ The WHARF Data set contains labelled accelerometer data recordings (obtained by 
 tri-axial accelerometer) to be used for the creation and validation of acceleration 
 models of simple human gestures.
 
-
-
-The Data Set is composed of over 1000 recordings of 14 gestures 
-performed by 17 volunteers:
-
-
-1.  Brush own teeth
-
-2.  Comb own hair
-3.  Get up from the bed
-
-4.  Lie down on the bed
-5.  Sit down on a chair
-
-6.  Stand up from a chair
-
-7.  Drink from a glass
-
-8.  Eat with fork and knife
-
-9.  Eat with spoon
-
-10. Pour water into a glass
-
-11. Use the telephone
-
-12. Climb the stairs
-
-13. Descend the stairs
-
-14. Walk
+The Data Set is composed of over 1000 recordings of 14 gestures performed by 17 volunteers.
 
 More information about the Data Set can be found in the MANUAL.
-
-
 
 The MATLAB scripts `displayTrial.m` and `displayModel.m` allow for the visualization 
 of the recorded accelerometer data.
