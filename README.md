@@ -1,6 +1,6 @@
-# README
+# hunger_MATLAB
 
-The **hunger_MATLAB library** is a MATLAB library for the modelling and offline recognition of stereotyped human gestures on the basis of the information acquired by wearable inertial sensors.
+The **hunger_MATLAB library** is a MATLAB library for the modelling and offline recognition of stereotyped human gestures on the basis of the information acquired by one wearable inertial sensor.
 
 ## 1. Installation & Usage
 
@@ -14,9 +14,7 @@ The WHARF Data set contains labelled accelerometer data recordings (obtained by 
 tri-axial accelerometer) to be used for the creation and validation of acceleration 
 models of simple human gestures.
 
-The Data Set is composed of over 1000 recordings of 14 gestures performed by 17 volunteers.
-
-More information about the Data Set can be found in the MANUAL.
+The Data Set is composed of over 1000 recordings of 14 gestures performed by 17 volunteers. More information about the Data Set can be found in the MANUAL.
 
 The MATLAB scripts `displayTrial.m` and `displayModel.m` allow for the visualization 
 of the recorded accelerometer data.
@@ -31,10 +29,6 @@ To validate the models:
 2. run `ValidateWHARF`
 3. check the results in the RESULTS folder
 
-### Usage with the Bimanual Data Set
-
-...under construction...
-
 ### Info for developers
 
 ...under construction...
@@ -43,7 +37,6 @@ To validate the models:
 
 Detailed information and example usage of the scripts can be
  accessed from within the MATLAB environment with the command:
-
 
 `help [function_name]`, e.g.
  `help displayModel`
