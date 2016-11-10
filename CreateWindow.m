@@ -1,5 +1,5 @@
-function [window numWritten] = CreateWindow(actual_sample,window,window_size,numWritten)
-% function [window numWritten] = CreateWindow(actual_sample,window,window_size,numWritten)
+function [window, numWritten] = CreateWindow(actual_sample,window,window_size,numWritten)
+% function [window, numWritten] = CreateWindow(actual_sample,window,window_size,numWritten)
 %
 % -------------------------------------------------------------------------
 % Author: Barbara Bruno (dept. DIBRIS, University of Genova, ITALY)

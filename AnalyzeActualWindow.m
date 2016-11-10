@@ -1,5 +1,5 @@
-function [gravity body] = AnalyzeActualWindow(window,window_size)
-% function [gravity body] = AnalyzeActualWindow(window,window_size)
+function [gravity, body] = AnalyzeActualWindow(window,window_size)
+% function [gravity, body] = AnalyzeActualWindow(window,window_size)
 %
 % -------------------------------------------------------------------------
 % Author: Barbara Bruno (dept. DIBRIS, University of Genova, ITALY)

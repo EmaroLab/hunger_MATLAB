@@ -1,5 +1,5 @@
-function [x_set y_set z_set numSamples] = ReadFiles(folder,debugMode)
-% function [x_set y_set z_set numSamples] = ReadFiles(folder,debugMode)
+function [x_set, y_set, z_set, numSamples] = ReadFiles(folder,debugMode)
+% function [x_set, y_set, z_set, numSamples] = ReadFiles(folder,debugMode)
 %
 % -------------------------------------------------------------------------
 % Author: Barbara Bruno (dept. DIBRIS, University of Genova, ITALY)

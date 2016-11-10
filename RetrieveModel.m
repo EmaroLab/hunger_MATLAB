@@ -1,5 +1,5 @@
-function [expMeans expSigma] = RetrieveModel(K,priors,mu,sigma,points,in,out)
-% function [expMeans expSigma] = RetrieveModel(K,priors,mu,sigma,points,in,out)
+function [expMeans, expSigma] = RetrieveModel(K,priors,mu,sigma,points,in,out)
+% function [expMeans, expSigma] = RetrieveModel(K,priors,mu,sigma,points,in,out)
 %
 % -------------------------------------------------------------------------
 % Author: Barbara Bruno (dept. DIBRIS, University of Genova, ITALY)

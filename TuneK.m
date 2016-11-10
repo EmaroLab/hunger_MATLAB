@@ -58,14 +58,14 @@ minK = 2;           % initial number of clusters to be used
 assignments = kmeans(set',minK, 'emptyaction','drop');
 s = silhouette(set',assignments,'sqeuclid');
 for i=1:1:minK
-    s_cluster(i) = sum(s(find(assignments == i)))/length(s(find(assignments == i)));
+    s_cluster(i) = sum(s(assignments == i))/length(s(assignments == i));
 end
 % further steps
 for K=(minK+1):1:maxK
     assignments = kmeans(set',K, 'emptyaction','drop');
     s = silhouette(set',assignments,'sqeuclid');
     for i=1:1:K
-        s_cluster(i) = sum(s(find(assignments == i)))/length(s(find(assignments == i)));
+        s_cluster(i) = sum(s(assignments == i))/length(s(assignments == i));
     end
     current = mean(s_cluster);
     % ending condition

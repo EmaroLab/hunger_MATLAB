@@ -43,6 +43,7 @@ function possibilities = Classify(ovDistances,thresholds)
 % COMPUTE THE POSSIBILITY OF EACH MODEL
 % (mapping of the likelihoods from [0..threshold(i)] to [1..0]
 numModels = length(thresholds);
+possibilities = zeros(numModels,1);
 for i=1:1:numModels
     possibilities(i) = 1 - ovDistances(i)/thresholds(i);
     if (possibilities(i) < 0)

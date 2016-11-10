@@ -1,5 +1,5 @@
-function [priors mu sigma] = TrainGMM(K,set,priors,mu,sigma,numVar,numData,debugMode)
-% function [priors mu sigma] = TrainGMM(K,set,priors,mu,sigma,numVar,numData,debugMode)
+function [priors, mu, sigma] = TrainGMM(K,set,priors,mu,sigma,numVar,numData,debugMode)
+% function [priors, mu, sigma] = TrainGMM(K,set,priors,mu,sigma,numVar,numData,debugMode)
 %
 % -------------------------------------------------------------------------
 % Author: Barbara Bruno (dept. DIBRIS, University of Genova, ITALY)
@@ -142,7 +142,7 @@ while true
     end
     % compute the current average log-likelihood
     F = pdf_point*priors';
-    F(find(F<realmin)) = realmin;
+    F(F<realmin) = realmin;
     log_likelihood = mean(log(F));
     % ENDING condition (check convergence on the likelihood)
     if abs((log_likelihood/log_likelihood_old)-1) < log_likelihood_threshold
@@ -158,7 +158,7 @@ if (debugMode == 1)
     % 1) time and acceleration along x
     x = 1:4:(max(set(1,:)));
     y = (min(set(2,:))):0.3:(max(set(2,:)));
-    [X Y] = meshgrid(x,y);
+    [X, Y] = meshgrid(x,y);
     Z = zeros(size(y,2),size(x,2));
     % compute each gaussian distribution
     for i=1:1:K
@@ -191,7 +191,7 @@ if (debugMode == 1)
     % 2) time and acceleration along y
     x = 1:4:(max(set(1,:)));
     y = (min(set(3,:))):0.3:(max(set(3,:)));
-    [X Y] = meshgrid(x,y);
+    [X, Y] = meshgrid(x,y);
     Z = zeros(size(y,2),size(x,2));
     % compute each gaussian distribution
     for i=1:1:K
@@ -224,7 +224,7 @@ if (debugMode == 1)
     % 3) time and acceleration along z
     x = 1:4:(max(set(1,:)));
     y = (min(set(4,:))):0.3:(max(set(4,:)));
-    [X Y] = meshgrid(x,y);
+    [X, Y] = meshgrid(x,y);
     Z = zeros(size(y,2),size(x,2));
     % compute each gaussian distribution
     for i=1:1:K
@@ -260,7 +260,7 @@ if (debugMode == 1)
         subplot(3,1,1);
         x = 1:4:(max(set(1,:)));
         y = (min(set(2,:))):0.3:(max(set(2,:)));
-        [X Y] = meshgrid(x,y);
+        [X, Y] = meshgrid(x,y);
         Z = zeros(size(y,2),size(x,2));
         % compute each gaussian distribution
         for i=1:1:K
@@ -290,7 +290,7 @@ if (debugMode == 1)
         subplot(3,1,2);
         x = 1:4:(max(set(1,:)));
         y = (min(set(3,:))):0.3:(max(set(3,:)));
-        [X Y] = meshgrid(x,y);
+        [X, Y] = meshgrid(x,y);
         Z = zeros(size(y,2),size(x,2));
         % compute each gaussian distribution
         for i=1:1:K
@@ -321,7 +321,7 @@ if (debugMode == 1)
         subplot(3,1,3);
         x = 1:4:(max(set(1,:)));
         y = (min(set(4,:))):0.3:(max(set(4,:)));
-        [X Y] = meshgrid(x,y);
+        [X, Y] = meshgrid(x,y);
         Z = zeros(size(y,2),size(x,2));
         % compute each gaussian distribution
         for i=1:1:K

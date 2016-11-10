@@ -1,5 +1,5 @@
-function [priors mu sigma] = InitializeGMM(set,K,numVar,debugMode)
-% function [priors mu sigma] = InitializeGMM(set,K,numVar,debugMode)
+function [priors, mu, sigma] = InitializeGMM(set,K,numVar,debugMode)
+% function [priors, mu, sigma] = InitializeGMM(set,K,numVar,debugMode)
 %
 % -------------------------------------------------------------------------
 % Author: Barbara Bruno (dept. DIBRIS, University of Genova, ITALY)
@@ -121,7 +121,7 @@ if (debugMode == 1)
         hold on;
         % display the clusters of points
         for i=1:1:K
-            gruppo = result(:,find(result(5,:)==i));
+            gruppo = result(:,result(5,:)==i);
             scatter3(gruppo(2,:),gruppo(3,:),gruppo(4,:),'*');
             hold on;
         end
@@ -139,7 +139,7 @@ if (debugMode == 1)
         scatter(set(1,:),set(2,:),'k');
         hold on;
         for i=1:1:K
-            gruppo = result(:,find(result(5,:)==i));
+            gruppo = result(:,result(5,:)==i);
             scatter(gruppo(1,:),gruppo(2,:),'*');
             hold on;
         end
@@ -150,7 +150,7 @@ if (debugMode == 1)
         scatter(set(1,:),set(3,:),'k');
         hold on;
         for i=1:1:K
-            gruppo = result(:,find(result(5,:)==i));
+            gruppo = result(:,result(5,:)==i);
             scatter(gruppo(1,:),gruppo(3,:),'*');
             hold on;
         end
@@ -161,7 +161,7 @@ if (debugMode == 1)
         scatter(set(1,:),set(4,:),'k');
         hold on;
         for i=1:1:K
-            gruppo = result(:,find(result(5,:)==i));
+            gruppo = result(:,result(5,:)==i);
             scatter(gruppo(1,:),gruppo(4,:),'*');
             hold on;
         end

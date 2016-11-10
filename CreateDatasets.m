@@ -1,5 +1,5 @@
-function [gravity body] = CreateDatasets(numSamples,x_set,y_set,z_set,debugMode)
-% function [gravity body] = CreateDatasets(numSamples,x_set,y_set,z_set,debugMode)
+function [gravity, body] = CreateDatasets(numSamples,x_set,y_set,z_set,debugMode)
+% function [gravity, body] = CreateDatasets(numSamples,x_set,y_set,z_set,debugMode)
 %
 % -------------------------------------------------------------------------
 % Author: Barbara Bruno (dept. DIBRIS, University of Genova, ITALY)
@@ -76,7 +76,7 @@ end
 % SEPARATE THE GRAVITY AND BODY-MOTION ACCELERATION COMPONENTS
 numFiles = size(x_set,2);
 % first trial outside of the loop to have meaningful initial values
-[gravity_trial body_trial] = GetComponents(numSamples,x_set(:,1),y_set(:,1),z_set(:,1),0);
+[gravity_trial, body_trial] = GetComponents(numSamples,x_set(:,1),y_set(:,1),z_set(:,1),0);
 shortNumSamples = size(gravity_trial,1);
 % initial values of the dataset arrays
 time = 1:shortNumSamples;
@@ -88,7 +88,7 @@ b_y_s = body_trial(1:shortNumSamples,2)';
 b_z_s = body_trial(1:shortNumSamples,3)';
 % further trials
 for i=2:1:numFiles
-    [gravity_trial body_trial] = GetComponents(numSamples,x_set(:,i),y_set(:,i),z_set(:,i),0);
+    [gravity_trial, body_trial] = GetComponents(numSamples,x_set(:,i),y_set(:,i),z_set(:,i),0);
     % CREATE THE DATASETS FOR THE GMMs
     time = cat(2,time,1:shortNumSamples);
     g_x_s = cat(2,g_x_s,gravity_trial(1:shortNumSamples,1)');
@@ -123,7 +123,7 @@ if (debugMode == 1)
     % display the 2D gravity and body acceleration datasets
     % reshape the arrays for plotting (from 3D to 2D)
     for i=1:1:numFiles
-        [gravity_trial body_trial] = GetComponents(numSamples,x_set(:,i),y_set(:,i),z_set(:,i),0);
+        [gravity_trial, body_trial] = GetComponents(numSamples,x_set(:,i),y_set(:,i),z_set(:,i),0);
         trial_gx(i,:) = gravity_trial(1:shortNumSamples,1)';
         trial_gy(i,:) = gravity_trial(1:shortNumSamples,2)';
         trial_gz(i,:) = gravity_trial(1:shortNumSamples,3)';

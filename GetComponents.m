@@ -1,5 +1,5 @@
-function [gravity body] = GetComponents(numSamples,x_axis,y_axis,z_axis,debugMode)
-% function [gravity body] = GetComponents(numSamples,x_axis,y_axis,z_axis,debugMode)
+function [gravity, body] = GetComponents(numSamples,x_axis,y_axis,z_axis,debugMode)
+% function [gravity, body] = GetComponents(numSamples,x_axis,y_axis,z_axis,debugMode)
 %
 % -------------------------------------------------------------------------
 % Author: Barbara Bruno (dept. DIBRIS, University of Genova, ITALY)

@@ -18,12 +18,12 @@
 % }
 % -------------------------------------------------------------------------
 % -------------------------------------------------------------------------
-% This function is associated to the public dataset WHARF Data Set.
+% This function is associated with the public dataset WHARF Data Set.
 % The WHARF Data Set and its rationale are described in the paper "A Public
 % Domain Dataset for ADL Recognition Using Wrist-placed Accelerometers".
 %
 % I would be grateful if you refer to the paper in any academic
-% publication that uses this code or the WHARF Data Set.
+% publication that uses the WHARF Data Set.
 % Here is the BibTeX reference:
 % @inproceedings{Bruno14c,
 % author = "B. Bruno and F. Mastrogiovanni and A. Sgorbissa",
@@ -83,11 +83,11 @@ for i=1:1:numFiles
     for j=1:1:numSamples
         current_sample = currentData(:,j);
         % update the sliding window with the current sample
-        [window numWritten] = CreateWindow(current_sample,window,window_size,numWritten);
+        [window, numWritten] = CreateWindow(current_sample,window,window_size,numWritten);
         % analysis is meaningful only when we have enough samples
         if (numWritten >= window_size)
             % compute the acceleration components of the current window of samples
-            [gravity body] = AnalyzeActualWindow(window,window_size);
+            [gravity, body] = AnalyzeActualWindow(window,window_size);
             % compute the difference between the actual data and each model
             for m=1:1:numModels
                 dist(m) = CompareWithModels(gravity(1:models_size(m)-64,:),body(1:models_size(m)-64,:),models(m).gP,models(m).gS,models(m).bP,models(m).bS);

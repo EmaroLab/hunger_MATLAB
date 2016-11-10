@@ -52,8 +52,8 @@ time = MODELgP(1,:);
 distance = zeros(numPoints,2);
 for i=1:1:numPoints
     x = time(i);
-    distance(i,1) = (transpose(gravity(:,x)-MODELgP(2:4,find(time==x))))*inv(MODELgS(:,:,find(time==x)))*(gravity(:,i)-MODELgP(2:4,find(time==x)));
-    distance(i,2) = (transpose(body(:,x)-MODELbP(2:4,find(time==x))))*inv(MODELbS(:,:,find(time==x)))*(body(:,i)-MODELbP(2:4,find(time==x)));
+    distance(i,1) = (transpose(gravity(:,x)-MODELgP(2:4,time==x)))*inv(MODELgS(:,:,time==x))*(gravity(:,i)-MODELgP(2:4,time==x));
+    distance(i,2) = (transpose(body(:,x)-MODELbP(2:4,time==x)))*inv(MODELbS(:,:,time==x))*(body(:,i)-MODELbP(2:4,time==x));
 end
 % compute the overall distance as the mean of the features distances
 ovDistance = mean(mean(distance));

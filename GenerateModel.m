@@ -1,5 +1,5 @@
-function [gr_points gr_sigma b_points b_sigma] = GenerateModel(folder)
-% function [gr_points gr_sigma b_points b_sigma] = GenerateModel(folder)
+function [gr_points, gr_sigma, b_points, b_sigma] = GenerateModel(folder)
+% function [gr_points, gr_sigma, b_points, b_sigma] = GenerateModel(folder)
 %
 % -------------------------------------------------------------------------
 % Author: Barbara Bruno (dept. DIBRIS, University of Genova, ITALY)
@@ -46,11 +46,11 @@ function [gr_points gr_sigma b_points b_sigma] = GenerateModel(folder)
 %   [CLIMB_gP CLIMB_gS CLIMB_bP CLIMB_bS] = GenerateModel(folder);
 
 % READ THE ACCELEROMETER RAW DATA FROM FILES
-[x_set y_set z_set numSamples] = ReadFiles(folder,0);
+[x_set, y_set, z_set, numSamples] = ReadFiles(folder,0);
 
 % SEPARATE THE GRAVITY AND BODY-MOTION ACCELERATION COMPONENTS...
 % ... AND CREATE THE DATASETS FOR GM-MODELING
-[gravity body] = CreateDatasets(numSamples,x_set,y_set,z_set,0);
+[gravity, body] = CreateDatasets(numSamples,x_set,y_set,z_set,0);
 
 % COMPUTE THE EXPECTED CURVE FOR EACH DATASET (GMM+GMR)
 % 1) determine the number of Gaussians to be used in the GMM
@@ -63,8 +63,8 @@ scaling_factor = 10/10;
 numGMRPoints = ceil(numPoints*scaling_factor);
 % 3) perform Gaussian Mixture Modelling and Regression to retrieve the
 %    expected curve and associated covariance matrices for each feature
-[gr_points gr_sigma] = GetExpected(gravity,K_gravity,numGMRPoints,0);
-[b_points b_sigma] = GetExpected(body,K_body,numGMRPoints,0);
+[gr_points, gr_sigma] = GetExpected(gravity,K_gravity,numGMRPoints,0);
+[b_points, b_sigma] = GetExpected(body,K_body,numGMRPoints,0);
 
 % DISPLAY THE RESULTS
 % display the GMR results for the GRAVITY and BODY ACC. features projected

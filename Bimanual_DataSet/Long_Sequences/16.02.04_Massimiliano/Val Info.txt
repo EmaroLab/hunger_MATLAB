@@ -1,6 +1,0 @@
-1454596734380A_WO-RfF-FCoT-OCC_VAL_Massimiliano_Left.txt
-	WO - 0:12
-	RfF - 0:25
-	FCoT - 0:55
-	OCC - 1:29
-	end - 1:59
