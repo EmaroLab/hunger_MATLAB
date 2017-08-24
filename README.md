@@ -29,10 +29,6 @@ To validate the models:
 2. run `ValidateWHARF`
 3. check the results in the RESULTS folder
 
-### Info for developers
-
-...under construction...
-
 ## 2. Documentation
 
 Detailed information and example usage of the scripts can be
